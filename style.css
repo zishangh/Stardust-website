@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0b0813;
+    color: #e2e1e9;
+    overflow-x: hidden;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background: radial-gradient(circle, #1a1235 0%, #05030a 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.3;
+}
+
+.hero-content {
+    z-index: 2;
+    max-width: 800px;
+}
+
+.glow-text {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 0 10px #7b2cbf, 0 0 20px #9d4edd, 0 0 40px #c77dff;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    animation: floating 3s ease-in-out infinite;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #b3afcb;
+    margin-bottom: 40px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #7b2cbf, #9d4edd);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(157, 78, 221, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(157, 78, 221, 0.7);
+}
+
+.btn-secondary {
+    border: 2px solid #7b2cbf;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background: rgba(123, 44, 191, 0.2);
+    transform: translateY(-3px);
+}
+
+.section {
+    padding: 100px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+    color: #fff;
+}
+
+.grid, .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #130f26;
+    padding: 40px 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(157, 78, 221, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #9d4edd;
+    box-shadow: 0 10px 30px rgba(157, 78, 221, 0.2);
+}
+
+.icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.card h3, .blog-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.card p, .blog-card p {
+    color: #b3afcb;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.blog-card {
+    background: #110c22;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.blog-img {
+    height: 150px;
+    background: linear-gradient(135deg, #241749 0%, #0b0813 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+}
+
+.blog-content {
+    padding: 25px;
+}
+
+.date {
+    font-size: 0.8rem;
+    color: #9d4edd;
+    font-weight: 600;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.read-more:hover {
+    color: #c77dff;
+}
+
+footer {
+    padding: 40px;
+    background: #05030a;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #635f7d;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+                                }
