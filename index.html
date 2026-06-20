@@ -32,68 +32,108 @@
     transition: 0.3s;
 }
 
-/* 📂 Side Drawer Menu (Badi Company Jaisa) */
+/* 🏷️ Dark Slider Menu with Almond Accent */
 .side-menu {
     position: fixed;
     top: 0;
-    left: -320px; /* Shuru me chhupa rahega */
+    left: -320px;
     width: 320px;
     height: 100%;
-    background: #0d0e15;
-    border-right: 1px solid rgba(88, 101, 242, 0.2);
+    background: #0d0e15; /* Charcoal Black background */
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
     z-index: 999;
     transition: 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
-    padding: 80px 20px 20px 20px;
-    box-shadow: 5px 0 25px rgba(0,0,0,0.5);
-    overflow-y: auto;
+    padding: 100px 30px 30px 30px;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Future options ke beech me gap banaye rakhega */
 }
 .side-menu.active {
-    left: 0; /* Tap karne pe bahar aayega */
+    left: 0;
 }
-.side-menu h3 {
-    color: #5865F2;
-    font-family: sans-serif;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-.side-menu p {
-    color: #b9bbbe;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-.side-menu-links a {
-    display: block;
-    color: white;
+
+/* ✨ Premium Almond Serif Typography (Future-Proof Links) */
+.aesthetic-option {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 2.2rem; /* Acche bade aur aesthetic size me */
+    font-weight: 700;   /* Ekdam perfect Bold look */
+    color: #fcf9f2;     /* Pure Cream/Almond accent text color */
     text-decoration: none;
-    padding: 12px;
-    margin-bottom: 8px;
-    background: rgba(255,255,255,0.03);
-    border-radius: 6px;
-    font-weight: bold;
-    transition: 0.2s;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: block;
 }
-.side-menu-links a:hover {
-    background: #5865F2;
+.aesthetic-option:hover {
+    color: #e3dac9; /* Hover karne par thoda deep almond shift */
     transform: translateX(5px);
 }
 
-/* Background Overlay */
+/* 📖 Elite Corporate Story Modal Page */
+.story-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 90%;
+    max-width: 520px;
+    background: #fdfbf7; /* Beautiful light almond page background */
+    border-radius: 16px;
+    padding: 45px;
+    z-index: 1001;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+.story-modal.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+.story-modal h2 {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 2.4rem;
+    color: #1a1918;
+    margin-bottom: 25px;
+    font-weight: 400;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding-bottom: 12px;
+}
+.story-modal p {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 1.1rem;
+    color: #3d3a36;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+.close-modal-btn {
+    background: none;
+    border: none;
+    font-family: sans-serif;
+    font-size: 0.85rem;
+    color: #8c857b;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+/* Subtle Blur Overlay */
 .menu-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
     z-index: 998;
     display: none;
 }
 .menu-overlay.active {
     display: block;
-}
+    }
                      </style>
 </head>
 <body>
@@ -104,19 +144,15 @@
 </div>
 
 <div class="side-menu" id="sideMenu">
-    <h3>✨ Stardust Saga (About Us)</h3>
-    <p><strong>Chapter 1: The Zidd</strong><br>Bina kisi coding background ke dusre servers se seekh kar ek zidd shuru hui—Race me hamesha #1 aana hai.</p>
-    <p><strong>Chapter 2: Indentation Errors Se Fight</strong><br>Mobile par ghinton brackets aur rules se ladkar, haar na maante hue pure engine ka base taiyar kiya.</p>
-    <p><strong>Chapter 3: 2360+ Lines Core</strong><br>Economy, Casino, Ticketing, aur AutoMod ke sath Ayaf jaise logo ke global loopholes ko tight code se block kiya.</p>
+    <a class="aesthetic-option" onclick="openStoryModal()">About Us</a>
     
-    <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
-    
-    <h3>🚀 Corporate Links</h3>
-    <div class="side-menu-links">
-        <a href="#features">Core Features</a>
-        <a href="#support">Support Desk</a>
-        <a href="#" onclick="alert('Stardust Premium Plans: Coming Soon in Q3 2026!')">Premium Plans</a>
     </div>
+
+<div class="story-modal" id="storyModal">
+    <h2>The Stardust Odyssey</h2>
+    <p>Driven by an absolute refusal to compromise on engineering excellence, Stardust began as a visionary blueprint to design a flawless digital engine. Advancing past conventional environment limits and mobile core constraints, the architecture evolved into an indomitable pillar of efficiency.</p>
+    <p>Today, with over 2,360 lines of high-performance logic, Stardust seamlessly drives comprehensive economy suites, fluid ticketing frameworks, and robust security systems—establishing its presence as a premier enterprise utility.</p>
+    <button class="close-modal-btn" onclick="closeStoryModal()">Close</button>
 </div>
 
 <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>    
@@ -278,6 +314,22 @@ function toggleMenu() {
     document.getElementById('sideMenu').classList.toggle('active');
     document.getElementById('menuOverlay').classList.toggle('active');
 }
-    </script>   
+
+function openStoryModal() {
+    document.getElementById('sideMenu').classList.remove('active');
+    document.getElementById('storyModal').classList.add('active');
+}
+
+function closeStoryModal() {
+    document.getElementById('storyModal').classList.remove('active');
+    document.getElementById('menuOverlay').classList.remove('active');
+}
+
+function closeEverything() {
+    document.getElementById('sideMenu').classList.remove('active');
+    document.getElementById('storyModal').classList.remove('active');
+    document.getElementById('menuOverlay').classList.remove('active');
+}
+ </script>   
 </body>
         </html>
