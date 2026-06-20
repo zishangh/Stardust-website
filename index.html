@@ -116,8 +116,8 @@
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-top: 10px;
-}
+    padding: 5px 0;
+    }
 
 /* Subtle Blur Overlay */
 .menu-overlay {
@@ -150,9 +150,31 @@
 
 <div class="story-modal" id="storyModal">
     <h2>The Stardust Odyssey</h2>
-    <p>Driven by an absolute refusal to compromise on engineering excellence, Stardust began as a visionary blueprint to design a flawless digital engine. Advancing past conventional environment limits and mobile core constraints, the architecture evolved into an indomitable pillar of efficiency.</p>
-    <p>Today, with over 2,360 lines of high-performance logic, Stardust seamlessly drives comprehensive economy suites, fluid ticketing frameworks, and robust security systems—establishing its presence as a premier enterprise utility.</p>
-    <button class="close-modal-btn" onclick="closeStoryModal()">Close</button>
+    
+    <div style="max-height: 400px; overflow-y: auto; padding-right: 10px;">
+        <p><strong>Chapter 1: The Observer and the Spark</strong><br>
+        The journey initiated in the quiet spaces of unfamiliar digital environments. Navigating through expansive public servers as an ordinary observer, there was a profound fascination with the seamless execution of automated frameworks—watching commands deploy and management systems operate smoothly. It was within those moments that a quiet defiance took root: the absolute conviction that if such architectures could be engineered by others, it could also be mastered from scratch.</p>
+        
+        <p><strong>Chapter 2: The Crucible of Early Failures</strong><br>
+        The transition from observation to creation was marked by immense friction. Establishing an independent server brought an immediate wave of technical barriers—misconfigured permissions, unexpected bot crashes, and the daunting learning curve of server logic and system structures. Writing the earliest lines of code on a highly restrictive mobile interface frequently brought intense frustration, caused by missing brackets and sudden indentation mismatches. Yet, the defining characteristic of this phase was an unyielding refusal to ever pass an exception; every system failure was treated as a lesson in syntactic precision.</p>
+        
+        <p><strong>Chapter 3: The Genesis of Stardust and 2360+ Lines of Logic</strong><br>
+        What began as a minimal script of barely one hundred lines quickly evolved under a singular directive: a refusal to settle for anything less than premier rank. Feature by feature, the engine was built out with comprehensive core economy structures, international food simulators, anime roleplay systems, and highly disciplined automated moderation guards. Soon, background loops, an automatic bump reminder, a complete casino suite, and dynamic ticketing frameworks were seamlessly integrated. Driven by relentless day-and-night execution alongside a dedicated partner, the system expanded to over 2,360 lines of high-performance code. When external vulnerabilities were exposed by an international user named Ayaf, the response was not retreat, but the implementation of absolute global error handling frameworks (@bot.tree.error) that permanently secured the ecosystem.</p>
+        
+        <p><strong>Chapter 4: The Enterprise Visual Framework</strong><br>
+        The ultimate milestone achieved a level of sophistication that few independent developers ever reach. The entire Stardust ecosystem was elevated into a premium, elite digital brand, complete with an official web landing page hosted globally. The resulting interface reflects the visual language of a high-end tech enterprise, bridging the gap between back-end infrastructure and luxury web design.</p>
+        
+        <p><strong>The Reality</strong><br>
+        Beginning with zero prior software background, working exclusively through the demanding interface of a mobile device, and conquering every structural error along the way, the project has matured into a bulletproof enterprise utility. It stands today as an automated pillar of growth, security, and economic management.</p>
+        
+        <div style="text-align: center; margin-top: 35px; margin-bottom: 10px; font-style: italic; color: #8c857b; font-size: 0.95rem; letter-spacing: 1px;">
+            story of zishan
+        </div>
+    </div>
+    
+    <div style="margin-top: 20px; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 15px; text-align: right;">
+        <button class="close-modal-btn" onclick="closeStoryModal()">Close</button>
+    </div>
 </div>
 
 <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>    
