@@ -90,6 +90,25 @@
     <footer>
         <p>&copy; 2026 Stardust Systems. Developed by <span class="designer-name">Zishan</span>. Academic portfolio presentation.</p>
     </footer>
+<script>
+    // URL se Discord ka temporary login code check karne ke liye
+    const urlParams = new URLSearchParams(window.location.search);
+    const loginCode = urlParams.get('code');
 
+    if (loginCode) {
+        // Agar user login karke aaya hai, toh dashboard button ka text change kar do
+        const dashboardBtn = document.querySelector('a[href*="discord.com/oauth2/authorize"]');
+        if (dashboardBtn) {
+            dashboardBtn.innerText = "✨ Dashboard Connected";
+            dashboardBtn.style.borderColor = "#2ecc71"; // Border green ho jayega
+            dashboardBtn.style.color = "#2ecc71";
+            dashboardBtn.href = "#"; // Link reset takki baar baar login na khule
+        }
+        
+        // Clean URL: browser ke address bar se code hata do bina page refresh kiye
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+</script>
+    
 </body>
         </html>
