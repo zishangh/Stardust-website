@@ -8,7 +8,62 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
+    
+<div id="user-profile" style="position: absolute; top: 20px; right: 20px; display: none; align-items: center; gap: 10px; background: rgba(255,255,255,0.9); padding: 8px 16px; border-radius: 50px; border: 1px solid rgba(28, 26, 23, 0.2); z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+        <img id="user-avatar" src="" style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #1c1a17;">
+        <span id="user-name" style="font-size: 0.9rem; font-weight: 600; color: #1c1a17; font-family: sans-serif;">Loading...</span>
+        <button onclick="logout()" style="background: none; border: none; color: #e74c3c; cursor: pointer; font-size: 0.85rem; font-weight: bold; margin-left: 8px; padding: 0;">Logout</button>
+    </div>
 
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const loginCode = urlParams.get('code');
+        const RENDER_URL = "https://stardust-bot.onrender.com"; 
+
+        async function handleLogin() {
+            if (loginCode) {
+                try {
+                    const response = await fetch(`${RENDER_URL}/api/callback?code=${loginCode}`);
+                    const userData = await response.json();
+                    
+                    if (userData.id) {
+                        localStorage.setItem('stardust_user', JSON.stringify(userData));
+                        updateUI(userData);
+                    }
+                } catch (err) {
+                    console.error("Discord Data Sync Failed:", err);
+                }
+                window.history.replaceState({}, document.title, window.location.pathname);
+            } else {
+                const savedUser = localStorage.getItem('stardust_user');
+                if (savedUser) updateUI(JSON.parse(savedUser));
+            }
+        }
+
+        function updateUI(user) {
+            document.getElementById('user-profile').style.display = 'flex';
+            document.getElementById('user-name').innerText = user.global_name || user.username;
+            
+            if(user.avatar) {
+                document.getElementById('user-avatar').src = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png`;
+            } else {
+                document.getElementById('user-avatar').src = "https://cdn.discordapp.com/embed/avatars/0.png";
+            }
+            
+            const dashBtns = document.querySelectorAll('a[href*="discord.com/oauth2/authorize"]');
+            dashBtns.forEach(btn => {
+                btn.innerText = "🚀 Open Dashboard";
+                btn.href = "dashboard.html"; 
+            });
+        }
+
+        function logout() {
+            localStorage.removeItem('stardust_user');
+            window.location.reload();
+        }
+
+        handleLogin();
+    </script>
     <header class="hero">
         <div class="hero-content">
             <h1 class="premium-title">Stardust Architecture</h1>
