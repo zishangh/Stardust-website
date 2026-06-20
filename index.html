@@ -6,8 +6,120 @@
     <title>Stardust Bot | Official Corporate Hub</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+/* 🍔 Hamburger Menu Button Styling */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    backdrop-filter: blur(10px);
+}
+.menu-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* 📂 Side Drawer Menu (Badi Company Jaisa) */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -320px; /* Shuru me chhupa rahega */
+    width: 320px;
+    height: 100%;
+    background: #0d0e15;
+    border-right: 1px solid rgba(88, 101, 242, 0.2);
+    z-index: 999;
+    transition: 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
+    padding: 80px 20px 20px 20px;
+    box-shadow: 5px 0 25px rgba(0,0,0,0.5);
+    overflow-y: auto;
+}
+.side-menu.active {
+    left: 0; /* Tap karne pe bahar aayega */
+}
+.side-menu h3 {
+    color: #5865F2;
+    font-family: sans-serif;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.side-menu p {
+    color: #b9bbbe;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.side-menu-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    margin-bottom: 8px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+.side-menu-links a:hover {
+    background: #5865F2;
+    transform: translateX(5px);
+}
+
+/* Background Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 998;
+    display: none;
+}
+.menu-overlay.active {
+    display: block;
+}
+                     </style>
 </head>
 <body>
+<div class="menu-btn" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="side-menu" id="sideMenu">
+    <h3>✨ Stardust Saga (About Us)</h3>
+    <p><strong>Chapter 1: The Zidd</strong><br>Bina kisi coding background ke dusre servers se seekh kar ek zidd shuru hui—Race me hamesha #1 aana hai.</p>
+    <p><strong>Chapter 2: Indentation Errors Se Fight</strong><br>Mobile par ghinton brackets aur rules se ladkar, haar na maante hue pure engine ka base taiyar kiya.</p>
+    <p><strong>Chapter 3: 2360+ Lines Core</strong><br>Economy, Casino, Ticketing, aur AutoMod ke sath Ayaf jaise logo ke global loopholes ko tight code se block kiya.</p>
+    
+    <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+    
+    <h3>🚀 Corporate Links</h3>
+    <div class="side-menu-links">
+        <a href="#features">Core Features</a>
+        <a href="#support">Support Desk</a>
+        <a href="#" onclick="alert('Stardust Premium Plans: Coming Soon in Q3 2026!')">Premium Plans</a>
+    </div>
+</div>
+
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>    
     
 <div id="user-profile" style="position: absolute; top: 20px; right: 20px; display: none; align-items: center; gap: 10px; background: rgba(255,255,255,0.9); padding: 8px 16px; border-radius: 50px; border: 1px solid rgba(28, 26, 23, 0.2); z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
         <img id="user-avatar" src="" style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #1c1a17;">
@@ -158,6 +270,10 @@
         
         // Clean URL: browser ke address bar se code hata do bina page refresh kiye
         window.history.replaceState({}, document.title, window.location.pathname);
+    }
+    function toggleMenu() {
+    document.getElementById('sideMenu').classList.toggle('active');
+    document.getElementById('menuOverlay').classList.toggle('active');
     }
 </script>
     
