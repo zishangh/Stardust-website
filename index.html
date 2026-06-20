@@ -3,188 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stardust Network</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #121110;
-            color: #FFF9F3;
-            line-height: 1.6;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        /* ORIGINAL HERO STYLING */
-        .hero {
-            padding: 80px 0 40px 0;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.2rem;
-            font-weight: 400;
-            margin-bottom: 24px;
-            letter-spacing: -0.5px;
-        }
-
-        .hero p {
-            color: #A3968C;
-            font-size: 1.15rem;
-            max-width: 620px;
-            margin: 0 auto 40px auto;
-            font-weight: 300;
-        }
-
-        /* BUTTONS BASE MATRIX */
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            font-size: 0.95rem;
-            font-weight: 400;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.2s ease;
-        }
-
-        .btn-primary {
-            background-color: #FFF9F3;
-            color: #121110;
-            border: 1px solid #FFF9F3;
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: #FFF9F3;
-            border: 1px solid #38332E;
-        }
-
-        /* 🆕 CENTERED DASHBOARD BUTTON STYLING */
-        .dashboard-btn-wrapper {
-            display: flex;
-            justify-content: center;
-            margin-top: 5px;
-            margin-bottom: 60px;
-        }
-
-        .btn-dashboard {
-            background-color: transparent;
-            color: #EADCD3;
-            border: 1px solid rgba(234, 220, 211, 0.2);
-            padding: 10px 40px;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-        }
-
-        /* SECTIONS & ARCHITECTURE */
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 400;
-            margin-bottom: 40px;
-            color: #FFF9F3;
-        }
-
-        /* DASHBOARD PREVIEW PANEL */
-        .dashboard-panel {
-            background: #1C1A17;
-            border: 1px solid #38332E;
-            border-radius: 6px;
-            padding: 30px;
-            text-align: left;
-            margin-top: 20px;
-        }
-
-        .panel-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid #262320;
-        }
-
-        .panel-row:last-child {
-            border-bottom: none;
-        }
-
-        .status-badge {
-            font-size: 0.75rem;
-            color: #EADCD3;
-            background: rgba(234, 220, 211, 0.05);
-            padding: 4px 12px;
-            border-radius: 3px;
-            border: 1px solid rgba(234, 220, 211, 0.1);
-        }
-
-        .designer-name {
-            color: #EADCD3;
-            font-weight: 500;
-        }
-    </style>
+    <title>Stardust Bot | Official Corporate Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="container">
-        <section class="hero">
-            <h1>Autonomous Discord Titan</h1>
-            <p>Next-generation utility matrix, custom multi-purpose gaming layers, and server management systems built seamlessly for advanced automation.</p>
-            
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="premium-title">Stardust Architecture</h1>
+            <p class="subtitle">The complete multi-purpose enterprise engine for Discord virtualization, integrated tier frameworks, and automated infrastructure management.</p>
             <div class="btn-group">
-                <a href="https://discord.com" target="_blank" class="btn btn-primary">Invite Stardust</a>
-                <a href="#" class="btn btn-secondary">System Modules</a>
+                <a href="#" class="btn btn-primary">Deploy Core Bot</a>
+                <a href="#features" class="btn btn-secondary">System Modules</a>
             </div>
+        </div>
+    </header>
 
-            <div class="dashboard-btn-wrapper">
-                <a href="#control-terminal" class="btn btn-dashboard">Open Web Dashboard</a>
+    <section id="features" class="section">
+        <h2 class="section-title">Core Systems Integrations</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-num">01</div>
+                <h3>Ticket Architecture</h3>
+                <p>Advanced support suites featuring asynchronous channel allocation, manual moderator claim configurations, and structured log archiving transmitted via direct text arrays.</p>
             </div>
-        </section>
-
-        <section style="padding: 40px 0; border-top: 1px solid #262320;">
-            <h2 class="section-title">Core Architecture</h2>
-            <p style="color: #A3968C; font-weight: 300;">Advanced structural assets managed by operator <span class="designer-name">Zishan</span>.</p>
-        </section>
-
-        <section id="control-terminal" style="padding: 40px 0; border-top: 1px solid #262320;">
-            <h2 class="section-title">Control Terminal</h2>
-            <div class="dashboard-panel">
-                <div style="margin-bottom: 20px; border-bottom: 1px solid #262320; padding-bottom: 15px;">
-                    <p style="font-size: 0.85rem; color: #A3968C;">Active Session Operator: <span class="designer-name">Zishan</span></p>
-                </div>
-                <div class="panel-row">
-                    <span>✨ Progression Framework (XP/Levels)</span>
-                    <span class="status-badge">ONLINE</span>
-                </div>
-                <div class="panel-row">
-                    <span>🚪 Connection Ledger (Leave Messages)</span>
-                    <span class="status-badge">ONLINE</span>
-                </div>
-                <div class="panel-row">
-                    <span>🤫 Anonymous Confession Portal</span>
-                    <span class="status-badge">ONLINE</span>
-                </div>
+            <div class="card">
+                <div class="card-num">02</div>
+                <h3>Progression Tracking</h3>
+                <p>Algorithmic user engagement analysis featuring strict transaction intervals alongside dynamic user milestone management scaled up to supreme terminal assignments.</p>
             </div>
-        </section>
-    </div>
+            <div class="card">
+                <div class="card-num">03</div>
+                <h3>Interactive Modules</h3>
+                <p>Full state-machine matrix implementations including integrated strategic verification grids and transaction systems connected to local background ledgers.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="section blog-section">
+        <h2 class="section-title">Stardust Chronicles</h2>
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-content">
+                    <span class="date">June 20, 2026</span>
+                    <h3>Architecting Scalable Milestone Databases</h3>
+                    <p>An in-depth analysis regarding the mitigation of race conditions inside high-frequency real-time event loops using internal cooldown configurations...</p>
+                    <a href="#" class="read-more">Read Treatise →</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-content">
+                    <span class="date">June 18, 2026</span>
+                    <h3>State Validation in Discord Component UI</h3>
+                    <p>Exploring complex data mutations and view execution parameters when managing interactive component arrays inside server environments...</p>
+                    <a href="#" class="read-more">Read Treatise →</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Stardust Systems. Developed by <span class="designer-name">Zishan</span>. Academic portfolio presentation.</p>
+    </footer>
 
 </body>
-    </html>
+                        </html>
