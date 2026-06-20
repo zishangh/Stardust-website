@@ -3,87 +3,291 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stardust Bot | Official Corporate Hub</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Stardust Network | Premium Discord Infrastructure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #1C1A17;
+            --bg-secondary: #262320;
+            --text-primary: #FFF9F3;
+            --text-secondary: #A3968C;
+            --accent: #EADCD3;
+            --border-color: #38332E;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER & NAV */
+        header {
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--text-secondary);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 90px 0 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 35px auto;
+        }
+
+        /* BUTTONS */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--text-primary);
+            color: var(--bg-primary);
+            border: 1px solid var(--text-primary);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--text-primary);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-primary);
+            color: var(--text-primary);
+        }
+
+        /* SECTIONS GENERAL */
+        .section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* GRID / CARDS */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 11fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--bg-secondary);
+            padding: 35px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* DASHBOARD GRID */
+        .dashboard-wrapper {
+            background: var(--bg-secondary);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-top: 20px;
+        }
+
+        .dash-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .dash-row:last-child {
+            border-bottom: none;
+        }
+
+        .status-badge {
+            background-color: rgba(234, 220, 211, 0.1);
+            color: var(--accent);
+            padding: 6px 16px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(234, 220, 211, 0.2);
+        }
+
+        .designer-name {
+            font-weight: 600;
+            color: var(--accent);
+            border-bottom: 1px solid var(--text-secondary);
+            padding-bottom: 2px;
+            letter-spacing: 0.5px;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 60px 40px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+    </style>
 </head>
 <body>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1 class="premium-title">Stardust Architecture</h1>
-            <p class="subtitle">The complete multi-purpose enterprise engine for Discord virtualization, integrated tier frameworks, and automated infrastructure management.</p>
-            <div class="btn-group">
-                <a href="https://discord.com/oauth2/authorize?client_id=1517046273037832342&permissions=8&integration_type=0&scope=bot" class="btn btn-primary" target="_blank">Deploy Core Bot</a>
-                <a href="https://discord.gg/Xhh5r2UM5C" class="btn btn-secondary" target="_blank">Main Server Link</a>
-            </div>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Stardust <span>Network</span></div>
         </div>
     </header>
 
-    <section id="features" class="section">
-        <h2 class="section-title">Core Systems Integrations</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="card-num">01</div>
-                <h3>Ticket Architecture</h3>
-                <p>Advanced support suites featuring asynchronous channel allocation, manual moderator claim configurations, and structured log archiving transmitted via direct text arrays.</p>
+    <main class="container">
+        <section class="hero">
+            <h1>Autonomous Discord Titan</h1>
+            <p>Next-generation utility matrix, custom multi-purpose gaming layers, and server management systems built seamlessly for advanced automation.</p>
+            <div class="btn-group">
+                <a href="https://discord.com" target="_blank" class="btn btn-primary">Invite Stardust</a>
+                <a href="#control-panel" class="btn btn-secondary">System Modules</a>
             </div>
-            <div class="card">
-                <div class="card-num">02</div>
-                <h3>Progression Tracking</h3>
-                <p>Algorithmic user engagement analysis featuring strict transaction intervals alongside dynamic user milestone management scaled up to supreme terminal assignments.</p>
-            </div>
-            <div class="card">
-                <div class="card-num">03</div>
-                <h3>Interactive Modules</h3>
-                <p>Full state-machine matrix implementations including integrated strategic verification grids and transaction systems connected to local background ledgers.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="support" class="section" style="border-top: 1px solid #EADCD3;">
-        <h2 class="section-title">Support Desk & Analytics</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="card-num">04</div>
-                <h3>24/7 Support Desk</h3>
-                <p>Facing issues with system configurations or permissions? Join our official headquarters server to open an asynchronous support ticket directly with our core staff.</p>
-                <a href="https://discord.gg/Xhh5r2UM5C" class="read-more" target="_blank">Open Support Ticket →</a>
-            </div>
-            <div class="card">
-                <div class="card-num">05</div>
-                <h3>User Feedback Array</h3>
-                <p>Your data analysis helps optimize Stardust infrastructure. Submit bug reports, custom feature requests, or performance telemetry directly inside our server portal.</p>
-                <a href="https://discord.gg/Xhh5r2UM5C" class="read-more" target="_blank">Submit Feedback →</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="blog" class="section blog-section" style="border-top: 1px solid #EADCD3;">
-        <h2 class="section-title">Stardust Chronicles</h2>
-        <div class="blog-grid">
-            <article class="blog-card">
-                <div class="blog-content">
-                    <span class="date">June 20, 2026</span>
-                    <h3>Architecting Scalable Milestone Databases</h3>
-                    <p>An in-depth analysis regarding the mitigation of race conditions inside high-frequency real-time event loops using internal cooldown configurations...</p>
-                    <a href="#" class="read-more">Read Treatise →</a>
+        <section class="section">
+            <h2 class="section-title">Core Architecture</h2>
+            <div class="features-grid">
+                <div class="card">
+                    <h3>Free Fire Ranks</h3>
+                    <p>Dynamic custom ranking system reflecting in-game style badges and progressive XP matrices for server text chats.</p>
                 </div>
-            </article>
-
-            <article class="blog-card">
-                <div class="blog-content">
-                    <span class="date">June 18, 2026</span>
-                    <h3>State Validation in Discord Component UI</h3>
-                    <p>Exploring complex data mutations and view execution parameters when managing interactive component arrays inside server environments...</p>
-                    <a href="#" class="read-more">Read Treatise →</a>
+                <div class="card">
+                    <h3>Ticket Engine</h3>
+                    <p>Highly secure modal interface handling instantaneous private customer feedback streams and support logs.</p>
                 </div>
-            </article>
-        </div>
-    </section>
+                <div class="card">
+                    <h3>Anime Marriage</h3>
+                    <p>Interactive interactive mini-games allowing users to roll characters via prefix scripts ($w, $m) and log marital registries.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="control-panel" class="section">
+            <h2 class="section-title">Control Terminal</h2>
+            <div class="dashboard-wrapper">
+                
+                <div style="display: flex; align-items: center; margin-bottom: 30px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px;">
+                    <div style="width: 45px; height: 45px; background: var(--accent); border-radius: 50%; margin-right: 15px; opacity: 0.85;"></div>
+                    <div>
+                        <h4 style="font-size: 1.1rem; font-weight: 500; font-family: 'Playfair Display', serif;">Operator: <span class="designer-name">Zishan</span></h4>
+                        <p style="color: var(--text-secondary); margin-top: 3px; font-size: 0.8rem;">Status Profile: Authorized Master Administrator</p>
+                    </div>
+                </div>
+                
+                <div class="dash-row">
+                    <span style="font-size: 0.95rem; font-weight: 400; color: var(--text-primary);">✨ Progression Framework (XP / Level Channel)</span>
+                    <span class="status-badge">ACTIVE MATRIX</span>
+                </div>
+                
+                <div class="dash-row">
+                    <span style="font-size: 0.95rem; font-weight: 400; color: var(--text-primary);">🚪 Connection Ledger (Custom Leave Messages)</span>
+                    <span class="status-badge">ACTIVE MATRIX</span>
+                </div>
+                
+                <div class="dash-row">
+                    <span style="font-size: 0.95rem; font-weight: 400; color: var(--text-primary);">🤫 Anonymous Confession Portal Suite</span>
+                    <span class="status-badge">ACTIVE MATRIX</span>
+                </div>
+
+                <div class="dash-row">
+                    <span style="font-size: 0.95rem; font-weight: 400; color: var(--text-primary);">💍 Marital Registry Network ($w & $m Databases)</span>
+                    <span class="status-badge">ACTIVE MATRIX</span>
+                </div>
+                
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Stardust Systems. Developed by <span class="designer-name">Zishan</span>. Academic portfolio presentation.</p>
+        <p>&copy; 2026 Stardust Automation Infrastructure. Developed & Maintained by <span class="designer-name">Zishan</span>.</p>
     </footer>
 
 </body>
