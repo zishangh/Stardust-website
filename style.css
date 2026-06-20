@@ -198,3 +198,12 @@ footer {
     font-size: 0.85rem;
     letter-spacing: 0.5px;
     }
+
+/* DESIGNER NAME PREMIUM HIGHLIGHT */
+.designer-name {
+    font-weight: 600;
+    color: #FFF9F3;
+    border-bottom: 1px solid #A3968C;
+    padding-bottom: 2px;
+    letter-spacing: 0.5px;
+    }
